@@ -1,6 +1,5 @@
 {
   "name": "n8n Codespace",
-  "image": "mcr.microsoft.com/devcontainers/universal:latest",
   "forwardPorts": [5678],
   "portsAttributes": {
     "5678": {
@@ -9,5 +8,5 @@
       "visibility": "public"
     }
   },
-  "postStartCommand": "docker compose up -d"
+  "postAttachCommand": "nohup docker compose up -d > /tmp/n8n-docker.log 2>&1 &"
 }
