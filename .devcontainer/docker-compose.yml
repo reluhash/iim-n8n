@@ -1,16 +1,18 @@
-version: '3.8'
-
 services:
-  n8n-app:
-    image: n8nio/n8n:latest
-    restart: always
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    restart: unless-stopped
     ports:
       - "5678:5678"
+    environment:
+      - N8N_HOST=0.0.0.0
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=https://${CODESPACE_NAME}-5678.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}/
+      - N8N_EDITOR_BASE_URL=https://${CODESPACE_NAME}-5678.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}/
+      - GENERIC_TIMEZONE=Asia/Kolkata
     volumes:
       - n8n_data:/home/node/.n8n
-      - .:/workspace
-    environment:
-      - N8N_SECURE_COOKIE=false
 
 volumes:
   n8n_data:
