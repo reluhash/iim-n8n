@@ -8,5 +8,5 @@
       "visibility": "public"
     }
   },
-  "postAttachCommand": "nohup docker compose up -d > /tmp/n8n-docker.log 2>&1 &"
+  "postAttachCommand": "nohup docker compose -f .devcontainer/docker-compose.yml up -d > /tmp/n8n-docker.log 2>&1 &"
 }
