@@ -1,18 +1,11 @@
 {
-  "name": "n8n Student Sandbox",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "n8n-app",
-  "workspaceFolder": "/workspace",
-  "forwardPorts":,
+  "name": "n8n Codespace",
+  "image": "mcr.microsoft.com/devcontainers/universal:latest",
+  "forwardPorts": [5678],
   "portsAttributes": {
     "5678": {
-      "label": "n8n Editor",
+      "label": "n8n Web UI",
       "onAutoForward": "openBrowser"
-    }
-  },
-  "customizations": {
-    "codespaces": {
-      "openFiles": []
     }
   }
 }
