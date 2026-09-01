@@ -5,7 +5,9 @@
   "portsAttributes": {
     "5678": {
       "label": "n8n Web UI",
-      "onAutoForward": "openBrowser"
+      "onAutoForward": "openBrowser",
+      "visibility": "public"
     }
-  }
+  },
+  "postStartCommand": "docker compose up -d"
 }
