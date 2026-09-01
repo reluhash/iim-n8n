@@ -5,12 +5,11 @@ services:
     ports:
       - "5678:5678"
     environment:
-      - N8N_HOST=0.0.0.0
-      - N8N_PORT=5678
-      - N8N_PROTOCOL=https
-      - WEBHOOK_URL=https://${CODESPACE_NAME}-5678.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}/
-      - N8N_EDITOR_BASE_URL=https://${CODESPACE_NAME}-5678.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}/
-      - GENERIC_TIMEZONE=Asia/Kolkata
+    - N8N_HOST=0.0.0.0
+    - N8N_PORT=5678
+    - N8N_PROTOCOL=https
+    - WEBHOOK_URL=https://${CODESPACE_NAME}-5678.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}/
+    - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
     volumes:
       - n8n_data:/home/node/.n8n
 
